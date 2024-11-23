@@ -20,10 +20,10 @@ console.log(diffYears,"diffYears")   // O.P => 0
 let addHours = new Date(startDate).getTime() + (1000*60*60*5)
 let addMins = addHours + (1000*60*30)
 let hoursAndMins = date_time_format(addMins) 
-console.log(hoursAndMins,"hoursAndMins") // O.P => 2024-10-02 00:00:00
+console.log(hoursAndMins,"hoursAndMins") // O.P => 2024-11-02 00:00:00
 
 function date_time_format(formatDate){
-    let date = new Date(formatDate).getFullYear() + '-' +  (0 + new Date(formatDate).getMonth().toString()).slice(-2) + '-' + (0 + new Date(formatDate).getDate().toString()).slice(-2)
+    let date = new Date(formatDate).getFullYear() + '-' + (0 +( new Date(formatDate).getMonth() + 1).toString()).slice(-2) + '-' + (0 + new Date(formatDate).getDate().toString()).slice(-2)
     let time = (0 + new Date(formatDate).getHours().toString()).slice(-2) + ':' +  (0 + new Date(formatDate).getMinutes().toString()).slice(-2) + ':' + (0 + new Date(formatDate).getSeconds().toString()).slice(-2)
     return date + " " + time
 }
